@@ -273,9 +273,11 @@ class ComposerStaticInit60c610639ab6cfa79034a1e136b6354f
     );
 
     public static $classMap = array (
-        'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
-        'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
+        'AdministradorTable' => __DIR__ . '/../..' . '/database/8_administrador_table.php',
+        'CitasTable' => __DIR__ . '/../..' . '/database/9_citas_table.php',
+        'CreateUsersTable' => __DIR__ . '/../..' . '/database/1_create_users_table.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',
+        'EspecialidadTable' => __DIR__ . '/../..' . '/database/4_especialidad_table.php',
         'File_Iterator' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Iterator.php',
         'File_Iterator_Facade' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Facade.php',
         'File_Iterator_Factory' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Factory.php',
@@ -347,7 +349,11 @@ class ComposerStaticInit60c610639ab6cfa79034a1e136b6354f
         'Hamcrest\\Type\\IsString' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Type/IsString.php',
         'Hamcrest\\Util' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Util.php',
         'Hamcrest\\Xml\\HasXPath' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Xml/HasXPath.php',
+        'HistoriaClinicaTable' => __DIR__ . '/../..' . '/database/10_historia_clinica_table.php',
         'IlluminateQueueClosure' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/IlluminateQueueClosure.php',
+        'LaboratorioTable' => __DIR__ . '/../..' . '/database/3_laboratorio_table.php',
+        'MedicoTable' => __DIR__ . '/../..' . '/database/6_medico_table.php',
+        'OrdenLaboratorioTable' => __DIR__ . '/../..' . '/database/12_orden_laboratorio_table.php',
         'PHPUnit\\Framework\\Assert' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/Assert.php',
         'PHPUnit\\Framework\\BaseTestListener' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/BaseTestListener.php',
         'PHPUnit\\Framework\\TestCase' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/TestCase.php',
@@ -750,6 +756,9 @@ class ComposerStaticInit60c610639ab6cfa79034a1e136b6354f
         'PHP_Token_XOR_EQUAL' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_YIELD' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_YIELD_FROM' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
+        'PacienteTable' => __DIR__ . '/../..' . '/database/5_paciente_table.php',
+        'RecepcionTable' => __DIR__ . '/../..' . '/database/7_recepcion_table.php',
+        'RecetaTable' => __DIR__ . '/../..' . '/database/13_receta_table.php',
         'SebastianBergmann\\Comparator\\ArrayComparator' => __DIR__ . '/..' . '/sebastian/comparator/src/ArrayComparator.php',
         'SebastianBergmann\\Comparator\\Comparator' => __DIR__ . '/..' . '/sebastian/comparator/src/Comparator.php',
         'SebastianBergmann\\Comparator\\ComparisonFailure' => __DIR__ . '/..' . '/sebastian/comparator/src/ComparisonFailure.php',
@@ -789,6 +798,8 @@ class ComposerStaticInit60c610639ab6cfa79034a1e136b6354f
         'SessionHandlerInterface' => __DIR__ . '/..' . '/symfony/http-foundation/Resources/stubs/SessionHandlerInterface.php',
         'TestCase' => __DIR__ . '/../..' . '/tests/TestCase.php',
         'Text_Template' => __DIR__ . '/..' . '/phpunit/php-text-template/src/Template.php',
+        'TratamientoTable' => __DIR__ . '/../..' . '/database/11_tratamiento_table.php',
+        'UsersTable' => __DIR__ . '/../..' . '/database/migrations/2017_05_17_205355_users_table.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
