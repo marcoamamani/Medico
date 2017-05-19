@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html >
     <head>
         <title>Laravel</title>
 
@@ -8,6 +8,7 @@
         <style>
             html, body {
                 height: 100%;
+
             }
 
             body {
@@ -17,6 +18,7 @@
                 display: table;
                 font-weight: 100;
                 font-family: 'Lato';
+                background-image: url('/tocino.jpg');
             }
 
             .container {
@@ -35,10 +37,10 @@
             }
         </style>
     </head>
-    <body>
+    <body >
         <div class="container">
             <div class="content">
-                <div class="title">Laravel 5 <b>by Tocino</b></div>
+                <div class="title">Laravel 5 <b>by Tocino II</b></div>
             </div>
         </div>
     </body>
