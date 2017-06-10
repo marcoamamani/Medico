@@ -15,3 +15,8 @@ Route::get('/ejemplo', function () {
     return view('index');
 });
 Route::get('/','AdminController@index');
+
+Route::get('login', function () {
+    return view('login');
+});
+
