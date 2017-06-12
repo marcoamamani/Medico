@@ -17,11 +17,8 @@ trait AuthenticatesUsers
      */
     public function getLogin()
     {
-        if (view()->exists('auth.authenticate')) {
-            return view('auth.authenticate');
-        }
 
-        return view('auth.login');
+        return view('login');
     }
 
     /**
@@ -105,7 +102,7 @@ trait AuthenticatesUsers
     {
         return Lang::has('auth.failed')
                 ? Lang::get('auth.failed')
-                : 'These credentials do not match our records.';
+                : 'Datos erroneos';
     }
 
     /**
@@ -127,7 +124,7 @@ trait AuthenticatesUsers
      */
     public function loginPath()
     {
-        return property_exists($this, 'loginPath') ? $this->loginPath : '/auth/login';
+        return property_exists($this, 'loginPath') ? $this->loginPath : '/login';
     }
 
     /**
@@ -137,7 +134,7 @@ trait AuthenticatesUsers
      */
     public function loginUsername()
     {
-        return property_exists($this, 'username') ? $this->username : 'email';
+        return property_exists($this, 'nombre_usuario') ? $this->username : 'nombre_usuario';
     }
 
     /**

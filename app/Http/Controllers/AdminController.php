@@ -18,7 +18,10 @@ class AdminController extends Controller
     {
         return view('inicio');
     }
-
+    public function calendario()
+    {
+       return view('calendario');
+    }
     /**
      * Show the form for creating a new resource.
      *

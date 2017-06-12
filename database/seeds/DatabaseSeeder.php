@@ -2,7 +2,8 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
-
+use Citas\User;
+use Carbon\Carbon;
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -10,12 +11,40 @@ class DatabaseSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
-    {
-        Model::unguard();
+     public function run()
+     {
+         Model::unguard();
 
-        // $this->call(UserTableSeeder::class);
+         $this->call('ClientesTableSeeder');
+         $this->command->info('User table seeded!');
 
-        Model::reguard();
-    }
-}
+
+         Model::reguard();
+     }
+ }
+ class ClientesTableSeeder extends Seeder
+ {
+
+     /**
+      * Run the database seeds.
+      *
+      * @return void
+      */
+     public function run()
+     {
+
+         User::create([
+             'nombres' => 'marco antonio',
+             'apellidos' => 'mamani diaz',
+             'email' => 'marco@gmail.com',
+             'nombre_usuario' => 'marco',
+             'direccion' => 'calle 123',
+             'nivel' => '0',
+             'password' => bcrypt('123456'),
+             'created_at' => Carbon::now(),
+             'updated_at' => Carbon:: now()
+         ]);
+
+     }
+
+ }

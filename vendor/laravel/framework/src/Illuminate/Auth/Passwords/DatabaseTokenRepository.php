@@ -110,7 +110,7 @@ class DatabaseTokenRepository implements TokenRepositoryInterface
     {
         $email = $user->getEmailForPasswordReset();
 
-        $token = (array) $this->getTable()->where('email', $email)->where('token', $token)->first();
+        $token = (array) $this->getTable()->where('nombre_usuario', $email)->where('token', $token)->first();
 
         return $token && ! $this->tokenExpired($token);
     }
