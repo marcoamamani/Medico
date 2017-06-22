@@ -18,7 +18,10 @@ Route::get('/ejemplo', function () {
     return view('index');
 });
 Route::group(['middleware' => 'auth'], function () {
-Route::get('/','AdminController@index');
+Route::get('/',['as'=>'/','uses'=>'AdminController@index']);
+Route::get('/medicosrec',['as'=>'/medicosrec','uses'=>'AdminController@medicosrec']);
+Route::get('/citasprog',['as'=>'/citasprog','uses'=>'AdminController@citasprog']);
+Route::post('/regpacientes','PacientesController@registrar');
 Route::get('/calendario','AdminController@calendario');
 });
 Route::get('login', function () {

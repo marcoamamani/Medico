@@ -6,11 +6,8 @@ use Illuminate\Http\Request;
 
 use Citas\Http\Requests;
 use Citas\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
 use Citas\Paciente;
-use Citas\Medico;
-use Citas\Especialidad;
-class AdminController extends Controller
+class PacientesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,43 +16,27 @@ class AdminController extends Controller
      */
     public function index()
     {
-      if(Auth::user()->nivel==0)
-      {
-        return view('inicio');
-      }
-      if(Auth::user()->nivel==1)
-      {
-        $pacientes= Paciente::get();
-        return view('iniciorec')->with('pacientes',$pacientes);
-      }
-      if(Auth::user()->nivel==2)
-      {
-        return view('iniciousu');
-      }
-      if(Auth::user()->nivel==3)
-      {
-        return view('iniciomed');
-      }
+        //
     }
-    public function calendario()
-    {
-       return view('calendario');
-    }
-    public function medicosrec()
-    {
-      $medicos = Medico::join('usuarios','id_usuario','=','usuarios.id')->join('especialidades','id_especialidad','=','especialidades.id')->get();
-      return view ('medicosrec')->with('medicos',$medicos);
-    }
-    public function citasprog()
-    {
-      $medicos = Medico::join('usuarios','id_usuario','=','usuarios.id')->join('especialidades','id_especialidad','=','especialidades.id')->get();
-      return view ('citasprog')->with('medicos',$medicos);
-    }
+
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
+    public function registrar(Request $request)
+    {
+      $paciente= new Paciente;
+      $paciente->ci= $request->input('ci');
+      $paciente->nombres= $request->input('nombres');
+      $paciente->apellidos= $request->input('apellidos');
+      $paciente->nick= '';
+      $paciente->cuenta= 0;
+      $paciente->save();
+      $mensaje="Paciente creado correctamente";
+      return redirect()->route('/')->with('mensaje',$mensaje);
+
+    }
     public function create()
     {
         //

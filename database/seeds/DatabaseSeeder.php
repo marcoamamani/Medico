@@ -34,12 +34,12 @@ class DatabaseSeeder extends Seeder
      {
 
          User::create([
-             'nombres' => 'marco antonio',
-             'apellidos' => 'mamani diaz',
-             'email' => 'marco@gmail.com',
-             'nombre_usuario' => 'marco',
-             'direccion' => 'calle 123',
-             'nivel' => '0',
+             'nombres' => 'marco',
+             'apellidos' => 'diaz ',
+             'email' => 'marco3@gmail.com',
+             'nombre_usuario' => 'marcom',
+             'direccion' => 'calle 12334',
+             'nivel' => '3',
              'password' => bcrypt('123456'),
              'created_at' => Carbon::now(),
              'updated_at' => Carbon:: now()

@@ -1,4 +1,14 @@
 @extends('layoutadmin')
+@section('cabecera')
+<h1>
+  Administracion
+  <small>Herramientas</small>
+</h1>
+<ol class="breadcrumb">
+  <li><a href="/"><i class="fa fa-dashboard"></i> Inicio</a></li>
+
+</ol>
+@stop
 @section('cuerpo')
 <section class="content">
   <!-- Info boxes -->
@@ -7,12 +17,12 @@
   <!-- /.col -->
 
   <div class="col-md-4 col-sm-6 col-xs-12">
-    <div class="info-box">
+    <div class="info-box"><a href="#">
       <span class="info-box-icon bg-red"><i class="ion ion-ios-gear-outline"></i></span>
 
       <div class="info-box-content">
         <span class="info-box-text">Ajustes</span>
-        <span class="info-box-number" style="font-weight:normal; font-size:15px;">Modifica datos de usuarios</span>
+        <span class="info-box-number" style="font-weight:normal; font-size:15px;">Modifica datos de usuarios</span></a>
       </div>
       <!-- /.info-box-content -->
     </div>
@@ -24,12 +34,12 @@
   <div class="clearfix visible-sm-block"></div>
 
   <div class="col-md-4 col-sm-6 col-xs-12">
-    <div class="info-box">
+    <div class="info-box"><a href="#">
       <span class="info-box-icon bg-blue"><i class="ion ion-person-add"></i></span>
 
       <div class="info-box-content">
         <span class="info-box-text">Agregar usuarios</span>
-        <span class="info-box-number" style="font-weight:normal; font-size:15px;">Registra nuevos usuarios</span>
+        <span class="info-box-number" style="font-weight:normal; font-size:15px;">Registra nuevos usuarios</span></a>
       </div>
       <!-- /.info-box-content -->
     </div>
@@ -37,12 +47,12 @@
   </div>
   <!-- /.col -->
   <div class="col-md-4 col-sm-6 col-xs-12">
-    <div class="info-box">
+    <div class="info-box"><a href="#">
       <span class="info-box-icon bg-yellow"><i class="ion ion-clipboard"></i></span>
 
       <div class="info-box-content">
-        <span class="info-box-text">Reportes</span>
-        <span class="info-box-number" style="font-weight:normal; font-size:15px;">Genera reportes globales</span>
+        <span class="info-box-text">Listar personal</span>
+        <span class="info-box-number" style="font-weight:normal; font-size:15px;">Genera una lista de todo el personal clasificado por funciones</span></a>
       </div>
       <!-- /.info-box-content -->
     </div>
@@ -52,12 +62,12 @@
 </div>
 <div class="row">
   <div class="col-md-4 col-sm-6 col-xs-12">
-    <div class="info-box">
+    <div class="info-box"><a href="#">
       <span class="info-box-icon bg-aqua"><i class="ion ion-person-stalker"></i></span>
 
       <div class="info-box-content">
-        <span class="info-box-text">Perfiles</span>
-        <span class="info-box-number" style="font-weight:normal; font-size:15px;">Lista de perfiles existentes de usuarios</span>
+        <span class="info-box-text">Pacientes</span>
+        <span class="info-box-number" style="font-weight:normal; font-size:15px;">Lista de pacientes registrados</span></a>
       </div>
       <!-- /.info-box-content -->
     </div>
@@ -65,12 +75,12 @@
   </div>
   <!-- /.col -->
   <div class="col-md-4 col-sm-6 col-xs-12">
-    <div class="info-box">
+    <div class="info-box"><a href="#">
       <span class="info-box-icon bg-purple"><i class="fa ion-ios-paper-outline"></i></span>
 
       <div class="info-box-content">
         <span class="info-box-text">Especialidades</span>
-        <span class="info-box-number" style="font-weight:normal; font-size:15px;">Lista de especialidades del hospital Agramont</span>
+        <span class="info-box-number" style="font-weight:normal; font-size:15px;">Lista de especialidades del hospital Agramont</span></a>
       </div>
       <!-- /.info-box-content -->
     </div>
@@ -82,12 +92,12 @@
   <div class="clearfix visible-sm-block"></div>
 
   <div class="col-md-4 col-sm-6 col-xs-12">
-    <div class="info-box">
+    <div class="info-box"><a href="#">
       <span class="info-box-icon bg-green"><i class="ion ion-ios-clock-outline"></i></span>
 
       <div class="info-box-content">
         <span class="info-box-text">Recientes</span>
-        <span class="info-box-number" style="font-weight:normal; font-size:15px;">Muestra usuarios registrados recientemente</span>
+        <span class="info-box-number" style="font-weight:normal; font-size:15px;">Muestra usuarios registrados recientemente</span></a>
       </div>
       <!-- /.info-box-content -->
     </div>
@@ -178,67 +188,14 @@
                 </div>
                 <!-- /.row -->
               <!-- ./box-body -->
-            <div class="box-footer">
-              <div class="row">
-                <div class="col-sm-3 col-xs-6">
-                  <div class="description-block border-right">
-                    <span class="description-percentage text-green"><i class="fa fa-caret-up"></i> 17%</span>
-                    <h5 class="description-header">$35,210.43</h5>
-                    <span class="description-text">TOTAL REVENUE</span>
-                  </div>
-                  <!-- /.description-block -->
-                </div>
-                <!-- /.col -->
-                <div class="col-sm-3 col-xs-6">
-                  <div class="description-block border-right">
-                    <span class="description-percentage text-yellow"><i class="fa fa-caret-left"></i> 0%</span>
-                    <h5 class="description-header">$10,390.90</h5>
-                    <span class="description-text">TOTAL COST</span>
-                  </div>
-                  <!-- /.description-block -->
-                </div>
-                <!-- /.col -->
-                <div class="col-sm-3 col-xs-6">
-                  <div class="description-block border-right">
-                    <span class="description-percentage text-green"><i class="fa fa-caret-up"></i> 20%</span>
-                    <h5 class="description-header">$24,813.53</h5>
-                    <span class="description-text">TOTAL PROFIT</span>
-                  </div>
-                  <!-- /.datosestadisticos-->
 
-                  <!-- /.description-block -->
-                </div>
-                <!-- /.col -->
-                <div class="col-sm-3 col-xs-6">
-                  <div class="description-block">
-                    <span class="description-percentage text-red"><i class="fa fa-caret-down"></i> 18%</span>
-                    <h5 class="description-header">1200</h5>
-                    <span class="description-text">GOAL COMPLETIONS</span>
-                  </div>
-                  <!-- /.description-block -->
-                </div>
-              </div>
-              <!-- /.row -->
-            </div>
             <!-- /.box-footer -->
-          </div>
-          <!-- /.box -->
-        </div>
-        <!-- /.col -->
-      </div>
+          </div></div></div>
       <!-- /.row -->
 
-
-
-    <!-- Control Sidebar -->
-
+@stop
+@section('post')
   <!-- Bootstrap 3.3.6 -->
-  <script src="bootstrap/js/bootstrap.min.js"></script>
-  <script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
-  <!-- FastClick -->
-  <script src="plugins/fastclick/fastclick.js"></script>
-  <!-- AdminLTE App -->
-  <script src="dist/js/app.min.js"></script>
   <!-- Sparkline -->
   <script src="plugins/sparkline/jquery.sparkline.min.js"></script>
   <!-- jvectormap -->
@@ -251,9 +208,8 @@
   <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
   <script src="dist/js/pages/dashboard2.js"></script>
   <!-- AdminLTE for demo purposes -->
-  <script src="dist/js/demo.js"></script>
-  </body>
-  </html>
+  
+
 
 
   </section>

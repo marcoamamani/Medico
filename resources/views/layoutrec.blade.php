@@ -17,8 +17,22 @@
   <link rel="stylesheet" href="{{ url('dist/css/AdminLTE.min.css')}}">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
+       <!-- fullCalendar 2.2.5-->
+       <link rel="stylesheet" href="plugins/fullcalendar/fullcalendar.min.css">
+       <link rel="stylesheet" href="plugins/fullcalendar/fullcalendar.print.css" media="print">
   <link rel="stylesheet" href="{{ url('dist/css/skins/_all-skins.min.css')}}">
-
+  <!-- daterange picker -->
+  <link rel="stylesheet" href="../../plugins/daterangepicker/daterangepicker.css">
+  <!-- bootstrap datepicker -->
+  <link rel="stylesheet" href="../../plugins/datepicker/datepicker3.css">
+  <!-- iCheck for checkboxes and radio inputs -->
+  <link rel="stylesheet" href="../../plugins/iCheck/all.css">
+  <!-- Bootstrap Color Picker -->
+  <link rel="stylesheet" href="../../plugins/colorpicker/bootstrap-colorpicker.min.css">
+  <!-- Bootstrap time Picker -->
+  <link rel="stylesheet" href="../../plugins/timepicker/bootstrap-timepicker.min.css">
+  <!-- Select2 -->
+  <link rel="stylesheet" href="../../plugins/select2/select2.min.css">
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -277,16 +291,16 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="{{ url('dist/img/avatar2.png')}}" class="user-image" alt="User Image">
+              <img src="{{ url('dist/img/avatar.png')}}" class="user-image" alt="User Image">
               <span class="hidden-xs">{{  Auth::user()->nombres.' '.Auth::user()->apellidos}}</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="{{url('dist/img/avatar2.png')}}" class="img-circle" alt="User Image">
+                <img src="{{url('dist/img/avatar.png')}}" class="img-circle" alt="User Image">
 
                 <p>
-                  {{  Auth::user()->nombres.' '.Auth::user()->apellidos}}- Administrador
+                  {{  Auth::user()->nombres.' '.Auth::user()->apellidos}}- Recepcion
                   <small>Miembro desde {{  Auth::user()->created_at}}</small>
                 </p>
               </li>
@@ -318,7 +332,7 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="{{ url('dist/img/avatar2.png')}}" class="img-circle" alt="Foto de perfil">
+          <img src="{{ url('dist/img/avatar.png')}}" class="img-circle" alt="Foto de perfil">
         </div>
         <div class="pull-left info">
           <p>{{Auth::user()->nombres}}</p>
@@ -338,24 +352,19 @@
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
-        <li class="header">Administracion</li>
+        <li class="header">Tareas</li>
         <li class="treeview">
-          <a href="#">
-            <i class="fa fa-dashboard"></i> <span>Cuentas de usuarios</span>
+          <a href="medicosrec">
+            <i class="fa fa-dashboard"></i> <span>Lista de medicos</span>
             <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
+
             </span>
           </a>
-          <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> Medicos</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Recepcionistas</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Pacientes</a></li>
-          </ul>
         </li>
         <li class="treeview">
-          <a href="#">
+          <a href="citasprog">
             <i class="fa fa-files-o"></i>
-            <span>Pacientes</span>
+            <span>Citas programadas</span>
             <span class="pull-right-container">
 
             </span>
@@ -364,42 +373,13 @@
         </li>
         <li>
           <a href="../widgets.html">
-            <i class="fa fa-th"></i> <span>Especialidades</span>
+            <i class="fa fa-file-pdf-o"></i> <span>Crear reporte diario</span>
             <span class="pull-right-container">
               <small class="label pull-right bg-green">new</small>
             </span>
           </a>
         </li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-pie-chart"></i>
-            <span>Laboratorios</span>
-            <span class="pull-right-container">
-
-            </span>
-          </a>
-
-        </li>
-        <li class="treeview active">
-          <a href="#">
-            <i class="fa fa-laptop"></i>
-            <span>Ordenes de laboratorio</span>
-            <span class="pull-right-container">
-
-            </span>
-          </a>
-
-        </li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-edit"></i> <span>Historiales clinicos</span>
-            <span class="pull-right-container">
-
-            </span>
-          </a>
-
-        </li>
-        </ul>
+          </ul>
     </section>
     <!-- /.sidebar -->
   </aside>
@@ -624,9 +604,24 @@
 <!-- ./wrapper -->
 
 <!-- jQuery 2.2.3 -->
-<script src="../../plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="plugins/datatables/dataTables.bootstrap.min.js"></script>
+<script type="text/javascript">
+  $(function () {
+    $("#example").DataTable();
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false
+    });
+  });
+</script>
 <!-- Bootstrap 3.3.6 -->
-<script src="../../bootstrap/js/bootstrap.min.js"></script>
+  <script src="/bootstrap/js/bootstrap.min.js"></script>
 <!-- FastClick -->
 <script src="../../plugins/fastclick/fastclick.js"></script>
 <!-- AdminLTE App -->
@@ -634,5 +629,76 @@
 @yield('post')
 <!-- AdminLTE for demo purposes -->
 <script src="../../dist/js/demo.js"></script>
+<!-- page script -->
+<!-- fullCalendar 2.2.5 -->
+<!-- AdminLTE for demo purposes -->
+<script>
+  $(function () {
+    //Initialize Select2 Elements
+    $(".select2").select2();
+
+    //Datemask dd/mm/yyyy
+    $("#datemask").inputmask("dd/mm/yyyy", {"placeholder": "dd/mm/yyyy"});
+    //Datemask2 mm/dd/yyyy
+    $("#datemask2").inputmask("dd/mm/yyyy", {"placeholder": "mm/dd/yyyy"});
+    //Money Euro
+    $("[data-mask]").inputmask();
+
+    //Date range picker
+    $('#reservation').daterangepicker();
+    //Date range picker with time picker
+    $('#reservationtime').daterangepicker({timePicker: true, timePickerIncrement: 30, format: 'MM/DD/YYYY h:mm A'});
+    //Date range as a button
+    $('#daterange-btn').daterangepicker(
+        {
+          ranges: {
+            'Today': [moment(), moment()],
+            'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+            'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+            'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+            'This Month': [moment().startOf('month'), moment().endOf('month')],
+            'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+          },
+          startDate: moment().subtract(29, 'days'),
+          endDate: moment()
+        },
+        function (start, end) {
+          $('#daterange-btn span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+        }
+    );
+
+    //Date picker
+    $('#datepicker').datepicker({
+      autoclose: true
+    });
+
+    //iCheck for checkbox and radio inputs
+    $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
+      checkboxClass: 'icheckbox_minimal-blue',
+      radioClass: 'iradio_minimal-blue'
+    });
+    //Red color scheme for iCheck
+    $('input[type="checkbox"].minimal-red, input[type="radio"].minimal-red').iCheck({
+      checkboxClass: 'icheckbox_minimal-red',
+      radioClass: 'iradio_minimal-red'
+    });
+    //Flat red color scheme for iCheck
+    $('input[type="checkbox"].flat-red, input[type="radio"].flat-red').iCheck({
+      checkboxClass: 'icheckbox_flat-green',
+      radioClass: 'iradio_flat-green'
+    });
+
+    //Colorpicker
+    $(".my-colorpicker1").colorpicker();
+    //color picker with addon
+    $(".my-colorpicker2").colorpicker();
+
+    //Timepicker
+    $(".timepicker").timepicker({
+      showInputs: false
+    });
+  });
+</script>
+
 </body>
 </html>
